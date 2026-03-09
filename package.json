@@ -5,16 +5,25 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "npx playwright test"
+    "test": "playwright test",
+    "ui": "playwright test --ui",
+    "test:chrome": "Playwright test --project=chromium",
+    "logs": "node utils/logViewer.js",
+    "logs:failed": "node utils/logViewer.js failed",
+    "logs:passed": "node utils/logViewer.js passed",
+    "logs:all": "node utils/logViewer.js 100",
+    "web-logs": "node utils/webLogger.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.50.0",
-    "@types/node": "^22.10.10"
+    "@types/node": "^22.10.10",
+    "sqlite3": "^5.1.7"
   },
   "dependencies": {
+    "better-sqlite3": "^12.2.0",
     "dotenv": "^16.4.7",
     "fs-extra": "^10.1.0",
     "pixelmatch": "^5.3.0",

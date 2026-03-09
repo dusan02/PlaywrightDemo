@@ -1,0 +1,34 @@
+{
+    "name": "eo-performance-tests",
+    "version": "1.0.0",
+    "description": "K6 Performance Tests for EO Process",
+    "scripts": {
+        "test:smoke": "k6 run --config=../k6.config.js scenarios/smoke-test.ts",
+        "test:load": "k6 run --config=../k6.config.js scenarios/load-test.ts",
+        "test:stress": "k6 run --config=../k6.config.js scenarios/stress-test.ts",
+        "test:spike": "k6 run --config=../k6.config.js scenarios/spike-test.ts",
+        "test:all": "npm run test:smoke && npm run test:load && npm run test:stress && npm run test:spike",
+        "test:smoke:verbose": "k6 run --config=../k6.config.js --verbose scenarios/smoke-test.ts",
+        "test:load:verbose": "k6 run --config=../k6.config.js --verbose scenarios/load-test.ts",
+        "test:stress:verbose": "k6 run --config=../k6.config.js --verbose scenarios/stress-test.ts",
+        "test:spike:verbose": "k6 run --config=../k6.config.js --verbose scenarios/spike-test.ts",
+        "test:smoke:cloud": "k6 cloud scenarios/smoke-test.ts",
+        "test:load:cloud": "k6 cloud scenarios/load-test.ts",
+        "test:stress:cloud": "k6 cloud scenarios/stress-test.ts",
+        "test:spike:cloud": "k6 cloud scenarios/spike-test.ts"
+    },
+    "devDependencies": {
+        "@types/k6": "^0.47.0"
+    },
+    "keywords": [
+        "k6",
+        "performance",
+        "testing",
+        "load-testing",
+        "stress-testing",
+        "eo",
+        "typescript"
+    ],
+    "author": "Performance Testing Team",
+    "license": "MIT"
+}
